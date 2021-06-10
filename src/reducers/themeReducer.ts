@@ -13,14 +13,16 @@ const setThemeAction = (type: string) => (newTheme: any) => ({
 export const setTheme = setThemeAction(CHANGE_THEME_ACTION);
 
 const themeReducer = (action: any) => {
-    return (action !== undefined) ? () => {
+    if (action !== undefined) {
         switch (action.type) {
             case CHANGE_THEME_ACTION:
                 return action.newTheme;
             default:
                 return theme;
         }
-    } : theme;
+    } 
+    
+    return theme;
 }
 
 export default themeReducer;
