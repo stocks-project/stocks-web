@@ -8,13 +8,15 @@ const Root = () => {
     const dataReducer = (useSelector(store => store) as any).dataReducer;
     
     return (
-        <BrowserRouter>
+        <RoomDetail/>
+    );
+}
+
+{/* <BrowserRouter>
             <Route exact path="/" component={RoomList}/>
             {((dataReducer.roomList as Array<any>).forEach(room => {
                 <Route exact path={room.uid} component={RoomDetail}/>
             }))}
-        </BrowserRouter>
-    );
-}
+        </BrowserRouter> */}
 
 export default Root;
